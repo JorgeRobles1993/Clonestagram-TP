@@ -3,7 +3,7 @@ include 'partials/header.php'
 
 ?>
 
-<h1 class="animate-character d-flex justify-content-center">Clonestagram</h1>
+<h1 class="animate-character d-flex justify-content-center">Cloneihegzfijsfdijsq</h1>
 
 
 <div class="row d-flex justify-content-end m-5"><img src="" alt="" srcset="">
@@ -26,7 +26,7 @@ include 'partials/header.php'
                 <input class="rounded form-control form-control-lg mt-3 p-2" name="username" type="text" placeholder="Username">
 
                 <div class="d-flex justify-content-center m-2">
-                <button type="button" class="submit btn btn-primary ">Se Connecter</button>
+                <button type="button" class="submit btn btn-primary ">Robin</button>
                 </div>
         </form>
 
