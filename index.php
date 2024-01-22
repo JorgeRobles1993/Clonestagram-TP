@@ -3,7 +3,7 @@ include 'partials/header.php'
 
 ?>
 
-<h1 class="animate-character d-flex justify-content-center">Clonestagram</h1>
+<h1 class="animate-character d-flex justify-content-center">Cloneihegzfijsfdijsq</h1>
 
 
 <div class="row d-flex justify-content-end m-5"><img src="" alt="" srcset="">
