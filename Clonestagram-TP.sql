@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Jan 22, 2024 at 01:18 PM
+-- Generation Time: Jan 22, 2024 at 02:55 PM
 -- Server version: 10.6.12-MariaDB-1:10.6.12+maria~ubu2004-log
 -- PHP Version: 8.1.14
 
@@ -67,9 +67,17 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `datetime` datetime NOT NULL,
-  `profilephoto` varchar(255) NOT NULL
+  `datetime` datetime DEFAULT NULL,
+  `profilephoto` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `datetime`, `profilephoto`) VALUES
+(1, 'RobinTest', '1234', '2024-01-22 14:35:14', NULL),
+(2, 'Robinpat', '$2y$10$pqFFMbVqITjKVItvF7EeNuPw6VTrbmRPo/RMDDRJbalAEFgOWLoXG', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -129,7 +137,7 @@ ALTER TABLE `photo`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
