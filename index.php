@@ -1,4 +1,5 @@
 <?php
+include './config/debug.php';
 include 'partials/header.php'
 
 ?>
@@ -18,18 +19,20 @@ include 'partials/header.php'
 
 
     <div class="col-6 d-flex justify-content-start ">
-
+        
         
         <form action="" method="get">
             <img src="./images/logotext.png" alt="" srcset="" width="400px">
-            
+            <h1 class="d-flex justify-content-center">LOG IN </h1>
                 <input class="rounded form-control form-control-lg mt-3 p-2" name="username" type="text" placeholder="Username">
+
+                <input class="rounded form-control form-control-lg mt-3 p-2" name="username" type="password" placeholder="Password">
 
                 <div class="d-flex justify-content-center m-2">
                 <button type="button" class="submit btn btn-primary ">Se Connecter</button>
-                </div>
+            </div>
+            <h4 class="d-flex justify-content-center m-2">ou &nbsp;<a href="register.php">s'inscrire</a></h4>
         </form>
-
     </div>
 </div>
 
@@ -39,7 +42,7 @@ include 'partials/header.php'
 <footer class="fw-light">
 
 
-<p> <a href="">Meta</a> <a href="">A propos</a>  <a href="">Blog</a>    <a href="">Emplois</a>   <a href="">Aide</a>   <a href="">API</a>   <a href="">Confidentialite</a>   <a href="">Parametres des cookies</a>  <a href="">Conditions</a>    <a href="">Lieux</a>  <a href="">Instagram Lite</a>   <a href="">Threads</a>   <a href="">Importation des contacts et non-utilisateurs</a>   <a href="">Meta Verified</a> <br> <div class="scrollmenu"><a href="">Francais <i class="fa-solid fa-chevron-down"></i></a> <a href="">© 2024 Clonestagram par Meta</a></div></p>
+<p> <a href="" style="text-decoration:none">Meta &nbsp;</a> <a href="" style="text-decoration:none">A propos &nbsp; </a>  <a href="" style="text-decoration:none">Blog &nbsp; </a>    <a href="" style="text-decoration:none">Emplois &nbsp; </a>   <a href="" style="text-decoration:none">Aide &nbsp; </a>   <a href="" style="text-decoration:none">API &nbsp; </a>   <a href="" style="text-decoration:none">Confidentialite &nbsp; </a>   <a href="" style="text-decoration:none">Parametres des cookies &nbsp; </a>  <a href="" style="text-decoration:none">Conditions &nbsp; </a>    <a href="" style="text-decoration:none">Lieux &nbsp; </a>  <a href="" style="text-decoration:none">Instagram Lite &nbsp; </a>   <a href="" style="text-decoration:none">Threads &nbsp; </a>   <a href="" style="text-decoration:none">Importation des contacts et non-utilisateurs &nbsp;</a>   <a href="" style="text-decoration:none">Meta Verified &nbsp;</a> <br> <div class="scrollmenu"><a href="" style="text-decoration:none">Francais  <i class="fa-solid fa-chevron-down"></i></a> <a href="" style="text-decoration:none"> &nbsp;© 2024 Clonestagram par Meta</a></div></p>
 
 
 </footer>
