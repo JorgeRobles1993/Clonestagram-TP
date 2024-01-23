@@ -44,12 +44,5 @@ include './partials/header.php'
 </div>
     <div class="col-4">
             <div>
-                <h2> here feed photos </h2>
-            </div>
-                <img src="./images/messicup.jpg" alt="" srcset="" class="w-100">
-    </div>
-    <div class="col-4">
-        <h2>here profile picture and username </h2>
-    </div>
-</div>
-<?php
+                <h5 class="card-title mb-0"><?= $_SESSION['username']; ?></h5> 
+<input type="file" id="profile-photo" name="profile-photo">

@@ -21,7 +21,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     if ($isverified) {
         // Connect l'utilisateur
         $_SESSION['id'] = $user['id'];
-        $_SESSION['usernmae'] = $user["username"];
+        $_SESSION['username'] = $user["username"];
       
 
         setcookie('username', $_SESSION['username'], time()+3600, '/');

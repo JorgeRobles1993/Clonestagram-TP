@@ -37,3 +37,21 @@ footer {
     width: 100%;
     text-align: center;
   }
+
+
+
+  ._ac7vpotoinstaprofil {
+    align-items: stretch;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .picc {
+    width: 150px; /* Ajustez la largeur selon vos besoins */
+    height: 150px; /* Ajustez la hauteur selon vos besoins */
+    border-radius: 50%;
+    overflow: hidden;
+}
