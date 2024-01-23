@@ -1,13 +1,11 @@
 <?php
-include './config/debug.php'
-include 'partials/header.php'
-
+include './partials/header.php'
 ?>
 
-<h1 class="animate-character d-flex justify-content-center">Cloneihegzfijsfdijsq</h1>
+<h1 class="animate-character d-flex justify-content-center">Clonestagram</h1>
 
 
-<div class="row d-flex justify-content-end m-5"><img src="" alt="" srcset="">
+<div class="row d-flex justify-content-end m-5">
 
     <div class="col-6">
 
@@ -22,18 +20,16 @@ include 'partials/header.php'
         
         
         <form action="" method="get">
-            <img src="./images/logotext.png" alt="" srcset="" width="400px">
+            <img class="animate-character" src="./images/logotext.png" alt="" srcset="" width="400px">
             <h1 class="d-flex justify-content-center">LOG IN </h1>
                 <input class="rounded form-control form-control-lg mt-3 p-2" name="username" type="text" placeholder="Username">
 
                 <input class="rounded form-control form-control-lg mt-3 p-2" name="username" type="password" placeholder="Password">
 
                 <div class="d-flex justify-content-center m-2">
-
                 <button type="button" class="submit btn btn-primary ">Se Connecter</button>
             </div>
             <h4 class="d-flex justify-content-center m-2">ou &nbsp;<a href="register.php">s'inscrire</a></h4>
-
         </form>
     </div>
 </div>

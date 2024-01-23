@@ -1,3 +1,8 @@
+<?php 
+include './config/debug.php'
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
