@@ -22,6 +22,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         // Connect l'utilisateur
         $_SESSION['id'] = $user['id'];
         $_SESSION['username'] = $user["username"];
+
         $_SESSION['usernmae'] = " ";
 
         setcookie('username', $_SESSION['username'], time()+3600, '/');

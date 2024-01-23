@@ -30,12 +30,11 @@ include './partials/header.php'
                     <a class="nav-link" href="#"> <i class="fa-regular fa-heart m-3" style="color: #000000;"></i>Notifications </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-square-plus m-3" style="color: #000000;"></i> Créer </a>
+                    <a class="nav-link" href="#"><i class="fa-regular fa-square-plus m-3" style="color: #000000;"></i> Créer
                 </li>
                 <li class="nav-item fw-bold">
                     <a class="nav-link" href="#"> Profil </a>
-                </li>   
-
+                </li> 
                 <div class="lastitems">
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa-brands fa-threads m-3" style="color: #000000;"></i>Threads </a>
@@ -48,7 +47,6 @@ include './partials/header.php'
         </nav>
     </div>
 <div class="col-2">
-
 </div>
     <div class="col-4">
             <div>

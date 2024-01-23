@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 include './partials/header.php'
 ?>
 <div class="row">
@@ -10,7 +8,7 @@ include './partials/header.php'
         <nav class="navbar bg-transparent">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-house m-3" style="color: #000000;"></i> Accueil </a>
+                 <a class="nav-link" href="#"><i class="fa-solid fa-house m-3" style="color: #000000;"></i> Accueil </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-brands fa-searchengin m-3"></i> Recherche </a>
@@ -32,7 +30,7 @@ include './partials/header.php'
                 </li>
                 <li class="nav-item fw-bold">
                     <a class="nav-link" href="#"> Profil </a>
-                </li>
+                </li>   
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-brands fa-threads m-3" style="color: #000000;"></i>Threads </a>
                 </li>
@@ -42,15 +40,9 @@ include './partials/header.php'
             </ul>
         </nav>
     </div>
-    <div class="col-2">
-    </div>
+<div class="col-2">
+</div>
     <div class="col-4">
-        <div class="row">
-            <div class="col-4 d-flex">
-                <img src="./images/pics.jpg" alt="Profilephoto" width="100" height="100" class="picc">
-            </div>
-            <div class=" col-6 d-flex">
-                <h5 class="card-title p-2"><?= $_SESSION['username']; ?></h5>
-                <a href="./update_profile.php"> <button type="submit" class="btn btn-dark p-2">Modifier profile</button> </a>
-            </div>
-            <?php
+            <div>
+                <h5 class="card-title mb-0"><?= $_SESSION['username']; ?></h5> 
+<input type="file" id="profile-photo" name="profile-photo">
