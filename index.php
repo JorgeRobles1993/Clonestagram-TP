@@ -2,9 +2,6 @@
 include './partials/header.php'
 ?>
 
-<h1 class="animate-character d-flex justify-content-center">Cloneinstagram</h1>
-
-
 <div class="row d-flex justify-content-end m-5">
 
     <div class="col-6">
@@ -19,6 +16,7 @@ include './partials/header.php'
     <div class="col-6 d-flex justify-content-start ">
         
         
+
         <form action="./process/process_login.php" method="post">
             <img src="./images/logotext.png" alt="" srcset="" width="400px">
             <h1 class="d-flex justify-content-center">LOG IN </h1>
@@ -31,7 +29,6 @@ include './partials/header.php'
                 <button type="submit" class="btn btn-primary ">Se Connecter</button>
             </div>
             <h4 class="d-flex justify-content-center m-2">ou &nbsp;<a href="register.php">s'inscrire</a></h4>
-
         </form>
     </div>
 </div>
