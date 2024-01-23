@@ -36,6 +36,7 @@ if (!empty($_POST['username'])
 
         $_SESSION['id'] = $connexion->lastInsertId();
         $_SESSION['username'] = $_POST["username"];
+        $_SESSION['profilephoto'] = 
 
         header('Location: ../feed.php?success=Votre compte a bien été créé !');
 }else if ($verifyUser){
