@@ -1,6 +1,6 @@
 
 <?php
-include './config/debug.php'
+include './partials/header.php'
 ?>
 
 <!DOCTYPE html>
