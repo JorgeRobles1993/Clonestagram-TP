@@ -20,7 +20,7 @@ include './partials/header.php'
 
 <section class="container border border-light col mx-5 p-5 rounded-5 blur">
                 <h1>Créer un compte</h1>
-                <form action="./process/process_register.php" method="post">
+                <form action="./process/process_register.php" method="post" enctype="multipart/form-data">
                      <div class="mb-3">
                         <label for="username" class="form-label">Identifiant</label>
                         <input type="text" class="form-control" name="username" id="username" placeholder="username">
@@ -31,7 +31,7 @@ include './partials/header.php'
                     </div>
                    <div class="m-3">
                    <label for="photoprofile" class="form-label">Photo de profile (optionelle)</label>
-                    <input type="file" id="profile-photo" name="profile-photo">
+                    <input type="file" id="profilephoto" name="profilephoto">
                     </div>
                     <a href=""> <button type="submit" class="btn btn-dark m-3">Créer un compte</button> </a>
                     

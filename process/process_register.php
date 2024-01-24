@@ -2,13 +2,14 @@
 session_start();
 date_default_timezone_set('Europe/Paris');
  
-$uploads = "../images/uploads";
-$tmp_name = $_FILES['profile-photo']['tmp_name'];
-$name = $_FILES['profile-photo']['name'];
-$addpict = move_uploaded_file($tmp_name, $uploads . '/' .$name );
-$_SESSION['profilphoto'] = $name;
-
 require_once '../config/connexion.php';
+
+$uploads = "../images/uploads";
+$tmp_name = $_FILES['profilephoto']['tmp_name'];
+$name = $_FILES['profilephoto']['name'];
+$addpict = move_uploaded_file($tmp_name, $uploads . '/' .$name );
+$_SESSION['profilephoto'] = $name;
+$imagebase = "baseprofilepic.jpeg";
 
 $preparedRequest = $connexion->prepare(
     "SELECT * FROM user
@@ -38,11 +39,13 @@ if (!empty($_POST['username'])
             $_POST["username"],
             $hashed_password,
             date("d-m-y h:i:s"),
-            $name ?? null
+            empty($name) ?  "baseprofilepic.jpeg" : $name
         ]);
+
 
         $_SESSION['id'] = $connexion->lastInsertId();
         $_SESSION['username'] = $_POST["username"];
+        $_SESSION['profilephoto'] = $imagebase;
 
          header('Location: ../feed.php?success=Votre compte a bien été créé !');
 }else if ($verifyUser){
