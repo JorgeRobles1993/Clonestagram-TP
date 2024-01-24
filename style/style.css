@@ -1,8 +1,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Roboto:wght@300&display=swap');
 
-.animate-character
-{
+.animate-character{
   background-image: linear-gradient(
     -225deg,
     #ece8e1 0%,
@@ -13,6 +12,7 @@
     #c720b9 83%,
      #ece8e1 100%
   );
+
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -31,51 +31,41 @@
   }
 }
 
-
 footer {
-    position:relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 
   }
 
-
-
-  ._ac7vpotoinstaprofil {
-    align-items: stretch;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    position: relative;
-  }
-
-  .picc {
-    width: 150px; /* Ajustez la largeur selon vos besoins */
-    height: 150px; /* Ajustez la hauteur selon vos besoins */
-    border-radius: 50%;
-    overflow: hidden;
+.picc {
+  width: 150px; /* Ajustez la largeur selon vos besoins */
+  height: 150px; /* Ajustez la hauteur selon vos besoins */
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-  } 
-
-  h1 { 
-    font-family: 'Grand Hotel', cursive;
-
-
+h1 { 
+  font-family: 'Grand Hotel', cursive;
   }
 
-  .nav-item{
-    font-family: 'Roboto', sans-serif;
+.nav-item{
+  font-family: 'Roboto', sans-serif;
   }
 
-  .navbar li{
-    margin-bottom:15px;
+.navbar li{
+  margin-bottom:15px;
 }
 
 .lastitems {
 margin-top: 200px;
 } 
 
+.picc2 {
+  width: 30px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+  border-radius: 50%;
+  overflow: hidden;
+}

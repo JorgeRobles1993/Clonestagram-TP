@@ -10,7 +10,7 @@ include './partials/header.php'
         <nav class="navbar bg-transparent">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-house m-3" style="color: #000000;"></i> Accueil </a>
+                    <a class="nav-link" href="./feed.php"><i class="fa-solid fa-house m-3" style="color: #000000;"></i> Accueil </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-brands fa-searchengin m-3"></i> Recherche </a>
@@ -28,10 +28,10 @@ include './partials/header.php'
                     <a class="nav-link" href="#"> <i class="fa-regular fa-heart m-3" style="color: #000000;"></i>Notifications </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-square-plus m-3" style="color: #000000;"></i> CrÃ©er </a>
+                    <a class="nav-link" href="#"><i class="fa-regular fa-square-plus m-3" style="color: #000000;"></i> Créer </a>
                 </li>
                 <li class="nav-item fw-bold">
-                    <a class="nav-link" href="#"> Profil </a>
+                    <a class="nav-link" href="./profil.php">Profil </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-brands fa-threads m-3" style="color: #000000;"></i>Threads </a>
@@ -51,6 +51,6 @@ include './partials/header.php'
             </div>
             <div class=" col-6 d-flex">
                 <h5 class="card-title p-2"><?= $_SESSION['username']; ?></h5>
-                <a href="./update_profile.php"> <button type="submit" class="btn btn-dark p-2">Modifier profile</button> </a>
+                <a href="./update_profile.php"> <button type="submit" class="btn btn-dark p-2">ajouter un photo</button> </a>
             </div>
             <?php

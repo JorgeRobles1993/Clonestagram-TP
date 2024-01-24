@@ -19,7 +19,7 @@ include './partials/header.php'
 
         <form action="./process/process_login.php" method="post">
             <img src="./images/logotext.png" alt="" srcset="" width="400px">
-            <h1 class="d-flex justify-content-center">LOG IN </h1>
+            <h2 class="d-flex justify-content-center">LOG IN </h2>
                 <input class="rounded form-control form-control-lg mt-3 p-2" name="username" type="text" placeholder="Username">
 
                 <input class="rounded form-control form-control-lg mt-3 p-2" name="password" type="password" placeholder="Password">
