@@ -1,14 +1,15 @@
 <?php
 session_start();
 date_default_timezone_set('Europe/Paris');
- 
-$uploads = "../images/uploads";
-$tmp_name = $_FILES['profile-photo']['tmp_name'];
-$name = $_FILES['profile-photo']['name'];
-$addpict = move_uploaded_file($tmp_name, $uploads . '/' .$name );
-$_SESSION['profilphoto'] = $name;
 
 require_once '../config/connexion.php';
+
+$uploads = "../images/uploads";
+$tmp_name = $_FILES['profilephoto']['tmp_name'];
+$name = $_FILES['profilephoto']['name'];
+$addpict = move_uploaded_file($tmp_name, $uploads . '/' .$name );
+$_SESSION['profilephoto'] = $name;
+
 
 $preparedRequest = $connexion->prepare(
     "SELECT * FROM user
