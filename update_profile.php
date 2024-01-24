@@ -3,12 +3,12 @@ session_start();
 include './partials/header.php'
 ?>
 <div class="row">
-    <div class="col-2">
-        <h1 class="textlogo fs-3">Clonestagram</h1>
-        <nav class="navbar bg-transparent">
+<div class="border border-right border-2 col-2">
+        <h1 class="textlogo fs-3 m-5">Clonestagram</h1>
+        <nav class="navbar">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                 <a class="nav-link" href="#"><i class="fa-solid fa-house m-3" style="color: #000000;"></i> Accueil </a>
+                 <a class="nav-link" href="./feed.php"><i class="fa-solid fa-house m-3" style="color: #000000;"></i> Accueil </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-brands fa-searchengin m-3"></i> Recherche </a>
@@ -26,17 +26,19 @@ include './partials/header.php'
                     <a class="nav-link" href="#"> <i class="fa-regular fa-heart m-3" style="color: #000000;"></i>Notifications </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-square-plus m-3" style="color: #000000;"></i> CrÃ©er </a>
+                    <a class="nav-link" href="#"><i class="fa-regular fa-square-plus m-3" style="color: #000000;"></i> Créer
                 </li>
                 <li class="nav-item fw-bold">
-                    <a class="nav-link" href="#"> Profil </a>
-                </li>   
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-brands fa-threads m-3" style="color: #000000;"></i>Threads </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-bars m-3" style="color: #000000;"></i> Plus </a>
-                </li>
+                   <a class="nav-link" href="./profil.php"><img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc2 m-2">  Profil </a>
+                </li> 
+                <div class="lastitems">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-brands fa-threads m-3" style="color: #000000;"></i>Threads </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-bars m-3" style="color: #000000;"></i> Plus </a>
+                    </li>
+                </div>
             </ul>
         </nav>
     </div>
@@ -47,5 +49,5 @@ include './partials/header.php'
                 <h5 class="card-title mb-0"><?= $_SESSION['username']; ?></h5> 
 
                 <form action="./process/process_addphoto.php" method="post" enctype="multipart/form-data"> 
-                    <input type="file" id="profile-photo" name="profile-photo"> <button class="btn" type="submit">envoyer</button>
+                    <input type="file" id="profilephoto" name="profilephoto"> <button class="btn" type="submit">envoyer</button>
                 </form>
