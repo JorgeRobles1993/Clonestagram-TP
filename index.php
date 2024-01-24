@@ -1,5 +1,6 @@
 <?php
 include './partials/header.php'
+
 ?>
 
 <div class="row d-flex justify-content-end m-5">
@@ -43,3 +44,5 @@ include './partials/header.php'
 
 
 </footer>
+
+

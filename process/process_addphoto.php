@@ -25,3 +25,5 @@ $preparedRequestUpdateUser->execute([
     $name ?? null,
     $_SESSION['id']
 ]);
+
+header('Location: ../profil.php');
