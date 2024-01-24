@@ -29,7 +29,11 @@ include './partials/header.php'
                         <label for="password" class="form-label">Mot de passe</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="password">
                     </div>
-                   
-                    <a href="./feed.php"> <button type="submit" class="btn btn-dark">Créer un compte</button> </a>
+                   <div class="m-3">
+                   <label for="photoprofile" class="form-label">Photo de profile (optionelle)</label>
+                    <input type="file" id="profile-photo" name="profile-photo">
+                    </div>
+                    <a href=""> <button type="submit" class="btn btn-dark m-3">Créer un compte</button> </a>
+                    
                 </form>
             </section>

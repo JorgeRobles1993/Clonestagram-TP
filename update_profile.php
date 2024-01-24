@@ -45,4 +45,7 @@ include './partials/header.php'
     <div class="col-4">
             <div>
                 <h5 class="card-title mb-0"><?= $_SESSION['username']; ?></h5> 
-<input type="file" id="profile-photo" name="profile-photo">
+
+                <form action="./process/process_addphoto.php" method="post" enctype="multipart/form-data"> 
+                    <input type="file" id="profile-photo" name="profile-photo"> <button class="btn" type="submit">envoyer</button>
+                </form>
