@@ -46,8 +46,36 @@ include './partials/header.php'
 </div>
     <div class="col-4">
             <div>
-                <h5 class="card-title mb-0"><?= $_SESSION['username']; ?></h5> 
+            <img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc3 m-2"> <a style="text-decoration:none" class="promodif"><?= $_SESSION['username'] ?></a>
 
-                <form action="./process/process_addphoto.php" method="post" enctype="multipart/form-data"> 
-                    <input type="file" id="profilephoto" name="profilephoto"> <button class="btn" type="submit">envoyer</button>
-                </form>
+            <style>
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    input[type="file"] {
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: #405DE6;
+        color: #ffffff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color:aqua;
+    }
+</style>
+
+<form action="./process/process_addphoto.php" method="post" enctype="multipart/form-data"> 
+    <input type="file" id="profilephoto" name="profilephoto">
+    <button class="btn btn-dark" type="submit">Envoyer</button>
+</form>
