@@ -41,8 +41,8 @@ footer {
   }
 
 .picc {
-  width: 150px; /* Ajustez la largeur selon vos besoins */
-  height: 150px; /* Ajustez la hauteur selon vos besoins */
+  width: 200px; /* Ajustez la largeur selon vos besoins */
+  height: 200px; /* Ajustez la hauteur selon vos besoins */
   border-radius: 50%;
   overflow: hidden;
 }
@@ -69,3 +69,43 @@ margin-top: 200px;
   border-radius: 50%;
   overflow: hidden;
 }
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 300px); /* Choisir la taille que vous préférez pour les carrés */
+  grid-gap: 10px;
+}
+
+.one {
+  grid-column: 1 / 1;
+  grid-row: 1;
+}
+.two {
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+}
+.three {
+  grid-column: 3 / 3;
+  grid-row: 1 /1;
+}
+.four {
+  grid-column: 1 / 1 ;
+  grid-row: 2 / 3;
+}
+.five {
+  grid-column: 2 / 2;
+  grid-row: 2 / 3;
+}
+.six {
+  grid-column: 3 / 3;
+  grid-row: 2 / 3;
+}
+
+.one, .two, .three, .four, .five, .six {
+  width:100%; /* Assure que chaque image occupe toute la largeur de sa cellule */
+  height:100%; /* Assure que chaque image occupe toute la hauteur de sa cellule */
+  object-fit: cover; /* Remplit la boîte en ajustant la taille de l'image, tout en conservant son ratio d'aspect */
+}
+
+  

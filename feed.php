@@ -55,13 +55,8 @@ include './partials/header.php'
 
     <div class="col-4"> <a href="./profil.php" style="text-decoration:none" class="text-dark">
 
-<<<<<<< HEAD
-    <img src="./images/<?=$_SESSION['profilephoto']?>" alt="" srcset="" class="picc2 m-2"> <?= $_SESSION['username'] ?> 
-     
-=======
     <img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc2 m-2"> <?= $_SESSION['username'] ?> 
         
->>>>>>> 5ffdcd93d4896fb4fa442f0f5a30b3987c9853ce
         </a></div>
 
         <a href="./process/process_logout.php" class="btn btn-black">
