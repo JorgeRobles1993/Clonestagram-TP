@@ -1,6 +1,14 @@
 <?php
 session_start();
-include './partials/header.php'
+include './partials/header.php';
+require_once './config/connexion.php';
+
+$preparedRequestPhotoFeed= $connexion->prepare(
+    "SELECT * FROM photo ORDER BY created_at DESC");
+
+    $preparedRequestPhotoFeed->execute();
+
+$photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -48,7 +56,22 @@ include './partials/header.php'
 <div class="col-2">
 </div>
     <div class="col-4">
-                <img src="./images/messicup.jpg" alt="" srcset="" class="w-100">
+
+<?php foreach($photofeed as $photofeed1) { ?>
+
+
+
+    <div class="card m-3" style="width: 30rem;">
+    <h5 class="card-title">here username</h5>
+    <img src="/images/uploads/<?=$photofeed1['photo'] ?> " style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">here comments and likes</h5>
+    <p class="card-text">here photo description</p>
+  </div>
+</div>
+<?php
+}?>
+
 
     </div>
 
@@ -61,16 +84,11 @@ include './partials/header.php'
             <img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc2 m-2"> <?= $_SESSION['username'] ?> </a>
             </div>
             <div class="col-9 pt-2">
-            <a href="./index.php" style="text-decoration:none" class="fw-semibold">Basculer</a>
+            <a href="./process/process_logout.php" style="text-decoration:none" class="fw-semibold">Basculer</a>
             </div>
     </div>
         </div>
 
-
-
-        <a href="./process/process_logout.php" class="btn btn-black">
-                <i class="fa-solid fa-person-walking-arrow-right"></i>
-            </a>
 
             <!-- la Modal de base -->
             
@@ -78,8 +96,13 @@ include './partials/header.php'
         
                 <div class="modal_content">
         
-                <form action="./process/process_addphoto.php" method="post" enctype="multipart/form-data"> 
-                    <input type="file" id="profilephoto" name="profilephoto"> <button class="btn" type="submit">envoyer</button>
+                <form action="./process/process_photofeed.php" method="post" enctype="multipart/form-data"> 
+                <div class="upload">
+    <h1 class="browse">Sélectionnez un fichier :</h1>
+    <input type="file" id="file" class="input-file" name="photofeed" multiple>
+    <span id="file-select-button" class="browse button black">Sélectionnez des fichiers</span>
+    <button class="btn btn-primary" type="submit">Envoyer photo</button>
+</div>
                 </form>
                      <section class="p-5">
         
@@ -92,11 +115,6 @@ include './partials/header.php'
             </button>
 
 </div>
-
-
-
-
-
 <?php
 
 ?>
