@@ -39,13 +39,13 @@ if (!empty($_POST['username'])
             $_POST["username"],
             $hashed_password,
             date("d-m-y h:i:s"),
-            empty($name) ?  "baseprofilepic.jpeg" : $name
+            empty($name) ?  $imagebase : $name
         ]);
 
 
         $_SESSION['id'] = $connexion->lastInsertId();
         $_SESSION['username'] = $_POST["username"];
-        $_SESSION['profilephoto'] = $imagebase;
+        $_SESSION['profilephoto'] = empty($name) ?  $imagebase : $name; 
 
          header('Location: ../feed.php?success=Votre compte a bien été créé !');
 }else if ($verifyUser){
