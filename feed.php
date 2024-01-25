@@ -27,7 +27,9 @@ $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="border border-right border-2 col-2">
         <nav class="stickynavbar navbar-nav ms-3">
+
             <h1 class="textlogo fs-2 ms-3">Clonestagram</h1>
+
             <ul class="nav navbar-nav">
                 <li class="nav-item">
                  <a class="nav-link" href="./feed.php"><i class="fa-solid fa-house fa-xl fa-xl m-3" style="color: #000000;"></i> Accueil </a>
