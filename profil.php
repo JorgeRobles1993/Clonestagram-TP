@@ -47,7 +47,7 @@ include './partials/header.php'
     </div>
     <div class="col-2">
     </div>
-    <div class="col-4">
+    <div class="col-6">
         <div class="row">
             <div class="col-4 d-flex">
             <img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc m-2">
@@ -56,4 +56,14 @@ include './partials/header.php'
                 <h5 class="card-title p-2"><?= $_SESSION['username']; ?></h5>
                 <a href="./update_profile.php"> <button type="submit" class="btn btn-dark p-2">ajouter un photo</button> </a>
             </div>
-            <?php
+            <?php ?>
+
+
+                <div class="grille">
+                <img src="./images/uploads/1.jpg" class="one"></img>
+                <img src="./images/uploads/2.jpg" class="two"></img>
+                <img src="./images/uploads/3.jpg" class="three"></img>
+                <img src="./images/uploads/4.jpg" class="four"></img>
+                <img src="./images/uploads/5.jpg" class="five"></img>
+                <img src="./images/uploads/6.jpg" class="six"></img>
+                </div>
