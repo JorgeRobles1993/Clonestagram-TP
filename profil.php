@@ -7,39 +7,39 @@ include './partials/header.php'
 <div class="row">
 
 <div class="border border-right border-2 col-2">
-        <h1 class="textlogo fs-3 m-5">Clonestagram</h1>
-        <nav class="navbar">
+        <h1 class="textlogo fs-2 ms-3">Clonestagram</h1>
+        <nav class="navbar-nav ms-3">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                 <a class="nav-link" href="./feed.php"><i class="fa-solid fa-house m-3" style="color: #000000;"></i> Accueil </a>
+                 <a class="nav-link" href="./feed.php"><i class="fa-solid fa-house fa-xl fa-xl m-3" style="color: #000000;"></i> Accueil </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-brands fa-searchengin m-3"></i> Recherche </a>
+                    <a class="nav-link" href="#"><i class="fa-brands fa-searchengin fa-xl m-3"></i> Recherche </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-compass m-3" style="color: #000000;"></i>Decouvrir </a>
+                    <a class="nav-link" href="#"><i class="fa-regular fa-compass fa-xl m-3" style="color: #000000;"></i>Decouvrir </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> <i class="fa-solid fa-clapperboard m-3" style="color: #000000;"></i>Reels </a>
+                    <a class="nav-link" href="#"> <i class="fa-solid fa-clapperboard fa-xl m-3" style="color: #000000;"></i>Reels </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-paper-plane m-3" style="color: #000000;"></i> Messages </a>
+                    <a class="nav-link" href="#"><i class="fa-regular fa-paper-plane fa-xl m-3" style="color: #000000;"></i> Messages </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> <i class="fa-regular fa-heart m-3" style="color: #000000;"></i>Notifications </a>
+                    <a class="nav-link" href="#"> <i class="fa-regular fa-heart fa-xl m-3" style="color: #000000;"></i>Notifications </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-square-plus m-3" style="color: #000000;"></i> Créer
+                    <a class="nav-link" href="#"><i class="fa-regular fa-square-plus fa-xl m-3" style="color: #000000;"></i> Créer
                 </li>
                 <li class="nav-item fw-bold">
-                   <a class="nav-link" href="./profil.php"><img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc2 m-2">  Profil </a>
+                   <a class="nav-link" href="./profil.php"><img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc2 m-3">  Profil </a>
                 </li> 
                 <div class="lastitems">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-brands fa-threads m-3" style="color: #000000;"></i>Threads </a>
+                        <a class="nav-link" href="#"><i class="fa-brands fa-threads fa-xl m-3" style="color: #000000;"></i>Threads </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-bars m-3" style="color: #000000;"></i> Plus </a>
+                        <a class="nav-link" href="#"><i class="fa-solid fa-bars fa-xl m-3" style="color: #000000;"></i> Plus </a>
                     </li>
                 </div>
             </ul>

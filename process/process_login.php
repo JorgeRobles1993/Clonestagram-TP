@@ -22,8 +22,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         // Connect l'utilisateur
         $_SESSION['id'] = $user['id'];
         $_SESSION['username'] = $user["username"];
-
-        $_SESSION['usernmae'] = " ";
+        $_SESSION['profilephoto'] = $user['profilephoto'];
 
         setcookie('username', $_SESSION['username'], time()+3600, '/');
         header('Location: ../feed.php?success=tu es connecté');
