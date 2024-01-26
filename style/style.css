@@ -32,7 +32,7 @@
 }
 
 footer {
-  position:relative;
+  position:static;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -131,7 +131,7 @@ ul li:hover {
 .modal {
   visibility: hidden;
   opacity: 1;
-  position: absolute;
+  position: fixed;
   top: 0; right: 0;
   bottom: 0; left: 0;
   display: flex;
@@ -170,3 +170,27 @@ ul li:hover {
   position: fixed;
 }
 
+.formupdate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.inputupdate[type="file"] {
+  margin-bottom: 10px;
+}
+
+.buttonupdate {
+  background-color: #000209;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttonupdate:hover {
+  background-color:aqua;
+}

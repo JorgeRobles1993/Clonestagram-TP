@@ -13,18 +13,23 @@ $_SESSION['photofeed'] = $name;
 $user_id = $_SESSION['id'];
 
 
+if(!empty ($name) && !empty($_POST['content'])){
 
 
 $preparedRequestAddphotofeed = $connexion->prepare( 
-    "INSERT INTO photo (`user_id`, `photo`, `created_at`) VALUES (?, ?, ?)"
+    "INSERT INTO photo (`user_id`, `photo`, `created_at`, `content`) VALUES (?, ?, ?, ?)"
 );
 
 $preparedRequestAddphotofeed->execute([
     $user_id,
     $name,
-    date("d-m-y h:i:s")
+    date("d-m-y h:i:s"),
+    $_POST['content']
 
 ]);
 
 header('Location: ../feed.php');
 
+}else{
+    header('Location: ../feed.php?error=Photo ou description manquante');
+}
