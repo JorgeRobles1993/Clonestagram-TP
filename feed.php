@@ -3,144 +3,89 @@ session_start();
 include './partials/header.php';
 require_once './config/connexion.php';
 
-// $preparedRequestPhotoFeed= $connexion->prepare(
-//     "SELECT * FROM photo ORDER BY created_at DESC");
-
-//     $preparedRequestPhotoFeed->execute();
-
-// $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
-
-
-$preparedRequestPhotoFeed= $connexion->prepare(
+$preparedRequestPhotoFeed = $connexion->prepare(
     "SELECT photo.*, user.id AS user_id, user.username, user.profilephoto FROM photo INNER JOIN user ON user.id = photo.user_id ORDER BY photo.created_at DESC
-    ");
+    "
+);
 
-    $preparedRequestPhotoFeed->execute();
+$preparedRequestPhotoFeed->execute();
 
 $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
-
-
 
 ?>
 
 <div class="row">
 
-    <div class="border border-right border-2 col-2">
-        <nav class="stickynavbar navbar-nav ms-3">
+    <?php
+    include './partials/navbar.php';
+    ?>
 
-            <h1 class="textlogo fs-2 ms-3">Clonestagram</h1>
-
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                 <a class="nav-link" href="./feed.php"><i class="fa-solid fa-house fa-xl fa-xl m-3" style="color: #000000;"></i> Accueil </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-brands fa-searchengin fa-xl m-3"></i> Recherche </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-compass fa-xl m-3" style="color: #000000;"></i>Decouvrir </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> <i class="fa-solid fa-clapperboard fa-xl m-3" style="color: #000000;"></i>Reels </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-paper-plane fa-xl m-3" style="color: #000000;"></i> Messages </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> <i class="fa-regular fa-heart fa-xl m-3" style="color: #000000;"></i>Notifications </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#demo"><i class="fa-regular fa-square-plus fa-xl m-3" style="color: #000000;"></i> Créer
-                </li>
-                <li class="nav-item fw-bold">
-                   <a class="nav-link" href="./profil.php"><img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc2 m-3">  Profil </a>
-                </li> 
-                <div class="lastitems">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-brands fa-threads fa-xl m-3" style="color: #000000;"></i>Threads </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-bars fa-xl m-3" style="color: #000000;"></i> Plus </a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
-    </div>
-<div class="col-2">
-</div>
-    <div class="col-4">
-
-    <div id="demo" class="modal">
-  <div class="modal_content">
-    <form action="./process/add_post.php" method="post" enctype="multipart/form-data">
-      <div class="upload">
-        <h2 class="browse">SELECT A PICTURE</h2>
-        <input type="file" id="image" class="input-file" name='image'>
-        <label for="caption" class="form-label"></label>
-        <input type="text" class="form-control rounded-pill mt-3 w-100 mx-auto d-block" name="content" id="content" placeholder="caption">
-        <button class="btn btn-outline-secondary d-flex mt-2" type="submit">SEND</button>
-      </div>
-    </form>
-    <section class="p-5">
-      <section class="container" id="">
-
-
-        <a href="#" class="modal_close">&times;</a>
-  </div>
 </div>
 
-<?php foreach($photofeed as $photofeed1) { ?>
+<div class="col-2 pt-4"></div>
+
+<div class="col-4 pt-4">
+
+    <?php
 
 
 
-    <div class="card m-3" style="width: 30rem;">
-    <h5 class="card-title"><img src="./images/uploads/<?=$photofeed1['profilephoto'] ?>" class="picc2 m-2"> <?= $photofeed1['username']?></h5>
-    <img src="/images/uploads/<?=$photofeed1['photo'] ?> " style="width: 30rem;">
-  <div class="card-body">
-    <h5 class="card-title"><a class="likephoto" style="color:black" href="#"><i class="fa-regular fa-heart fa-lg me-2"></i></a> <i class="fa-regular fa-comment fa-flip-horizontal fa-lg"></i></h5>
-    <p class="card-text">here photo description</p>
-  </div>
+    foreach ($photofeed as $photofeed1) { 
+
+//AFFICHER LE NOMBRE DE LIKES
+$prepareRequest = $connexion->prepare('SELECT COUNT(*) FROM likes WHERE likes.post_id = ?');
+$prepareRequest->execute([
+    $photofeed1['id']
+]);
+$like = $prepareRequest->fetch();
+?>
+
+        <div class="card m-3" style="width: 30rem;">
+            <h5 class="card-title"><img src="./images/uploads/<?= $photofeed1['profilephoto'] ?>" class="picc2 m-2"> <?= $photofeed1['username'] ?></h5>
+            <img src="/images/uploads/<?= $photofeed1['photo'] ?> " style="width: 30rem;">
+
+            <div class="card-body">
+                <!-- LIKE -->
+                <form action="./process/process_like.php" method="post">
+                    <h5 class="card-title">
+                        <input type="hidden" name="post_id" value="<?= $photofeed1['id'] ?>">
+                        <button type="submit" class="btn"> <i class="fa-regular fa-heart fa-lg me-2" style="color: #000000;"> <?= $like['0'] ?> </i> </button>
+                        <button type="submit" class="btn"> <i class="fa-regular fa-comment fa-flip-horizontal fa-lg" style="color: #000000;"></i> </button>
+                    </h5>
+                </form>
+
+
+                <p class="card-text"><?= $photofeed1['username'] . ":" . " " . $photofeed1['content'] ?></p>
+            </div>
+        </div>
+    <?php
+    } ?>
+    <?php
+    include './partials/footer.php';
+    ?>
+
 </div>
-<?php
-}?>
 
-    </div>
-
-    <div class="col-4"> <a href="./profil.php" style="text-decoration:none" class="text-dark">
+<div class="col-4 pt-4"> <a href="./profil.php" style="text-decoration:none" class="text-dark">
 
         <div class="row">
 
             <div class="col-5">
-            <img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc2 m-2"> <?= $_SESSION['username'] ?> </a>
-            </div>
-            <div class="col-7 pt-2">
-            <a href="./process/process_logout.php" style="text-decoration:none" class="fw-semibold">Basculer</a>
-            </div>
-    </div>
-        </div>
-
-            <!-- la Modal de base -->
-            
-            <div id="demo" class="modal">
-        
-                <div class="modal_content">
-        
-                <form action="./process/process_photofeed.php" method="post" enctype="multipart/form-data"> 
-                <div class="upload">
-    <h1 class="browse">Sélectionnez un fichier :</h1>
-    <input type="file" id="file" class="input-file" name="photofeed" multiple>
-    <span id="file-select-button" class="browse button black"></span>
-    <button class="btn btn-primary" type="submit">Envoyer photo</button>
+                <img src="./images/uploads/<?= $_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc2 m-2"> <?= $_SESSION['username'] ?>
+    </a>
 </div>
-                </form>
-                     <section class="p-5">
-        
-                    <section class="container" id="">      
-            
-                <a href="#" class="modal_close">&times;</a>
-              </div>
-            </div>
-<?php
 
-?>
+<div class="col-7 pt-2">
 
+    <a href="./process/process_logout.php" style="text-decoration:none" class="fw-semibold">Basculer</a>
+</div>
+
+<!-- la Modal (fenetre pop-up) -->
+
+<div id="demo" class="modal">
+
+    <?php
+    include './partials/modal.php';
+    ?>
+
+</div>
