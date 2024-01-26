@@ -14,13 +14,13 @@ $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<div class="row">
+<div class="row borderrow">
 
     <?php
     include './partials/navbar.php';
     ?>
 
-</div>
+
 
 <div class="col-2 pt-4"></div>
 
@@ -28,23 +28,25 @@ $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
 
     <?php
     
-    
+
     
     foreach ($photofeed as $photofeed1) { ?>
 
         <div class="card m-3" style="width: 30rem;">
-            <h5 class="card-title"><img src="./images/uploads/<?= $photofeed1['profilephoto'] ?>" class="picc2 m-2"> <?= $photofeed1['username'] ?></h5>
+            <h5 class="card-title">
+                <a href="visitprofil.php?id=<?= $photofeed1['user_id'] ?>" style="text-decoration:none" class="text-dark"><img src="./images/uploads/<?= $photofeed1['profilephoto'] ?>" class="picc2 m-2"> <?= $photofeed1['username'] ?></a>
+            </h5>
             <img src="/images/uploads/<?= $photofeed1['photo'] ?> " style="width: 30rem;">
             <div class="card-body">
-                <h5 class="card-title"><a class="likephoto" style="color:black" href="#"><i class="fa-regular fa-heart fa-lg me-2"></i></a> <i class="fa-regular fa-comment fa-flip-horizontal fa-lg"></i></h5>
+                <h5 class="card-title">
+                    <a class="likephoto" style="color:black" href="#"><i class="fa-regular fa-heart fa-lg me-2"></i></a>
+                     <i class="fa-regular fa-comment fa-flip-horizontal fa-lg"></i>
+                </h5>
                 <p class="card-text"><?= $photofeed1['username'] . ":" . " ". $photofeed1['content'] ?></p>
             </div>
         </div>
     <?php
     } ?>
-    <?php
-include './partials/footer.php';
-?>
 
 </div>
 
@@ -69,6 +71,8 @@ include './partials/footer.php';
     <?php
     include './partials/modal.php';
     ?>
+
+</div>
 
 </div>
 
