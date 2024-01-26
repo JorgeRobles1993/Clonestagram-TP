@@ -27,26 +27,47 @@ $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
 <div class="col-4 pt-4">
 
     <?php
-    
 
-    
-    foreach ($photofeed as $photofeed1) { ?>
+
+
+
+    foreach ($photofeed as $photofeed1) { 
+
+//AFFICHER LE NOMBRE DE LIKES
+$prepareRequest = $connexion->prepare('SELECT COUNT(*) FROM likes WHERE likes.post_id = ?');
+$prepareRequest->execute([
+    $photofeed1['id']
+]);
+$like = $prepareRequest->fetch();
+?>
+
 
         <div class="card m-3" style="width: 30rem;">
             <h5 class="card-title">
                 <a href="visitprofil.php?id=<?= $photofeed1['user_id'] ?>" style="text-decoration:none" class="text-dark"><img src="./images/uploads/<?= $photofeed1['profilephoto'] ?>" class="picc2 m-2"> <?= $photofeed1['username'] ?></a>
             </h5>
             <img src="/images/uploads/<?= $photofeed1['photo'] ?> " style="width: 30rem;">
+
             <div class="card-body">
-                <h5 class="card-title">
-                    <a class="likephoto" style="color:black" href="#"><i class="fa-regular fa-heart fa-lg me-2"></i></a>
-                     <i class="fa-regular fa-comment fa-flip-horizontal fa-lg"></i>
-                </h5>
-                <p class="card-text"><?= $photofeed1['username'] . ":" . " ". $photofeed1['content'] ?></p>
+
+                <!-- LIKE -->
+                <form action="./process/process_like.php" method="post">
+                    <h5 class="card-title">
+                        <input type="hidden" name="post_id" value="<?= $photofeed1['id'] ?>">
+                        <button type="submit" class="btn"> <i class="fa-regular fa-heart fa-lg me-2" style="color: #000000;"> <?= $like['0'] ?> </i> </button>
+                        <button type="submit" class="btn"> <i class="fa-regular fa-comment fa-flip-horizontal fa-lg" style="color: #000000;"></i> </button>
+                    </h5>
+                </form>
+                <p class="card-text"><?= $photofeed1['username'] . ":" . " " . $photofeed1['content'] ?></p>
             </div>
         </div>
     <?php
     } ?>
+
+    <?php
+    include './partials/footer.php';
+    ?>
+
 
 </div>
 
@@ -64,7 +85,7 @@ $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
     <a href="./process/process_logout.php" style="text-decoration:none" class="fw-semibold">Basculer</a>
 </div>
 
-        <!-- la Modal (fenetre pop-up) -->
+<!-- la Modal (fenetre pop-up) -->
 
 <div id="demo" class="modal">
 
@@ -75,4 +96,5 @@ $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 </div>
+
 

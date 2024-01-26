@@ -23,7 +23,9 @@ $preparedRequestAddphotofeed = $connexion->prepare(
 $preparedRequestAddphotofeed->execute([
     $user_id,
     $name,
-    date("d-m-y H:i:s"),                                   
+
+    date("d-m-y H:i:s"),
+
     $_POST['content']
 
 ]);
