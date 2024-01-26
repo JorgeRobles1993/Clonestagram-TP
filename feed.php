@@ -70,6 +70,25 @@ $photofeed = $preparedRequestPhotoFeed->fetchAll(PDO::FETCH_ASSOC);
 </div>
     <div class="col-4">
 
+    <div id="demo" class="modal">
+  <div class="modal_content">
+    <form action="./process/add_post.php" method="post" enctype="multipart/form-data">
+      <div class="upload">
+        <h2 class="browse">SELECT A PICTURE</h2>
+        <input type="file" id="image" class="input-file" name='image'>
+        <label for="caption" class="form-label"></label>
+        <input type="text" class="form-control rounded-pill mt-3 w-100 mx-auto d-block" name="content" id="content" placeholder="caption">
+        <button class="btn btn-outline-secondary d-flex mt-2" type="submit">SEND</button>
+      </div>
+    </form>
+    <section class="p-5">
+      <section class="container" id="">
+
+
+        <a href="#" class="modal_close">&times;</a>
+  </div>
+</div>
+
 <?php foreach($photofeed as $photofeed1) { ?>
 
 
