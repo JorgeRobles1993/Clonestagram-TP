@@ -9,12 +9,12 @@ include './partials/header.php'
 include './partials/navbar.php';
 ?>
 
-</div>
+
 
 <div class="col-2 pt-4"></div>
 
     <div class="col-4 pt-4">
-        <div class="row">
+        <div class="row borderrow">
             <div>
             <img src="./images/uploads/<?=$_SESSION['profilephoto'] ?>" alt="" srcset="" class="picc3 m-2"> <a style="text-decoration:none" class="promodif"><?= $_SESSION['username'] ?></a>
 
@@ -22,4 +22,8 @@ include './partials/navbar.php';
     <input class="inputupdate" type="file" id="profilephoto" name="profilephoto">
     <button class="buttonupdate btn btn-dark" type="submit">Envoyer</button>
 </form>
+</div>
+
+
+
 </div>

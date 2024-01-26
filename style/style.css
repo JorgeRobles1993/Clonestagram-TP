@@ -32,12 +32,13 @@
 }
 
 footer {
-  position:static;
-  left: 0;
+  position:absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
+  height: 5rem;
   }
+
 
 .picc {
   width: 200px; /* Ajustez la largeur selon vos besoins */
@@ -164,4 +165,14 @@ ul li:hover {
 
 .buttonupdate:hover {
   background-color:aqua;
+} 
+
+.custom-image {
+  height: 300px; /* Ajustez la hauteur comme vous le souhaitez */
+  width: 300px;  /* Ajuster la largeur comme vous le souhaitez */
+  object-fit: cover; /* Ajuste la façon dont l'image est ajustée dans la boîte */
+}
+
+.borderrow{
+  min-height: 100vh;
 }
