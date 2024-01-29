@@ -48,22 +48,6 @@ require_once './config/connexion.php';
     </div>
 </div>
 
-
-        <div class="container">
-            <div class="row">
-                <?php foreach ($post as $post1) : ?>
-                    <div class="col-4 p-1">
-                        <div class="card">
-                            <img src="./images/uploads/<?= $post1['photo'] ?>" class="custom-image" alt="Post Image">
-                            <!-- Vous pouvez ajouter d'autres éléments ici pour afficher d'autres informations sur le post -->
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-
-
         <!-- la Modal (fenetre pop-up) -->
 
         <div id="demo" class="modal">

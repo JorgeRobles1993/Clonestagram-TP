@@ -59,6 +59,7 @@ $like = $prepareRequest->fetch();
         </div>
     <?php
     } ?>
+
     <?php
     include './partials/footer.php';
     ?>
