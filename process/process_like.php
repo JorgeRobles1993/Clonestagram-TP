@@ -30,5 +30,3 @@ if(!empty($userLike)){
     ]);
     header('Location: ../feed.php');
 }
-
-

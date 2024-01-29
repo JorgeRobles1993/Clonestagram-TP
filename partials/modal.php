@@ -16,3 +16,5 @@
     
         <a href="#" class="modal_close">&times;</a>
       </div>
+
+      <script src="../JS//script.js"></script>
